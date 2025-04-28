@@ -3,12 +3,12 @@
 
 ## Indice
 
-> 1. [Explotación de RFI](#)
-> 2. [Mitigación de RFI](#)
->    2.1 [Bloquear la inclusión de URLs externas]()
->    2.2 [Restringir las rutas de inclusión]()
->    2.3 [Usar rutas absolutas y sanitización]()
->    2.4 [Deshabilitar allow_url_include en php.ini]()
+> 1. [Explotación de RFI](#explotación-de-rfi)  
+> 2. [Mitigación de RFI](#mitigación-de-rfi)  
+>    2.1 [Bloquear la inclusión de URLs externas](#bloquear-la-inclusión-de-urls-externas)  
+>    2.2 [Restringir las rutas de inclusión](#restringir-las-rutas-de-inclusión)  
+>    2.3 [Usar rutas absolutas y sanitización](#usar-rutas-absolutas-y-sanitización)  
+>    2.4 [Deshabilitar allow_url_include en php.ini](#deshabilitar-allow_url_include-en-phpini)  
 
 ## Explotación de RFI
 
