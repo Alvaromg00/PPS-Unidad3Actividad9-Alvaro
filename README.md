@@ -70,4 +70,4 @@ Para prevenir la inclusión remota de archivos en PHP podemos configurar el serv
 
 Esto, como hemos visto anteriormente se hace configurando la variable allow_url_include en el archivo php.ini. Esta opción previene ataques RFI globalmente.
 
-![php.ini](./Recursos/Imagenes/6.png)
+![php.ini](./Imagenes/6.png)
