@@ -42,17 +42,32 @@ Posibles efectos del ataque:
 
 ## Mitigación de RFI
 
+La solución más efectiva para eliminar las vulnerabilidades de inclusión de archivos es evitar pasar la entrada enviada por el usuario a cualquier API de sistema de archivos/marco. Si esto no es posible, la aplicación puede mantener una lista de permisos de archivos que puede incluir la página y, a continuación, utilizar un identificador (por ejemplo, el número de índice) para acceder al archivo seleccionado. Cualquier solicitud que contenga un identificador no válido debe rechazarse para que no haya oportunidad de que los usuarios maliciosos manipulen la ruta.
 
 ### Bloquear la inclusión de URLs externas
 
+Creamos el fichero [rfi2.php](./Recursos/rfi2.php) para que en lugar de permitir cualquier entrada sin validación, se debe bloquear la inclusión de archivos remotos:
 
+Ahora sin intentamos introducir una url no nos deja y sale lo siguiente:
+
+![rfi2.php](./Imagenes/4.png)
 
 ### Restringir las rutas de inclusión
 
+La siguiente aproximación, sería crear un fichero [rfi3.php](./Recursos/rfi3.php) para limitar la inclusión de archivos solo a una lista de archivos específicos dentro del servidor, en este caso solo nos permite el acceso a **file1.php** y a **file2.php**.:
 
+![rfi3.php](./Imagenes/5.png)
 
 ### Usar rutas absolutas y sanitización
 
+Podemos ir un paso más allá asegurándonos que solo se incluyan archivos desde una ubicación específica, en este caso el mismo directorio que el script, para ello creamos el fichero [rfi4.php](./Recursos/rfi4.php) con las mitigaciones:
 
+Si intentamos incluir un fichero que no este en la misma ruta dará acceso denegado.
 
 ### Deshabilitar allow_url_include en php.ini
+
+Para prevenir la inclusión remota de archivos en PHP podemos configurar el servidor para que acepte únicamente archivos locales y no archivos remotos.
+
+Esto, como hemos visto anteriormente se hace configurando la variable allow_url_include en el archivo php.ini. Esta opción previene ataques RFI globalmente.
+
+![php.ini](./Recursos/Imagenes/6.png)
